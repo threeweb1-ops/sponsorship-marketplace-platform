@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spring 2026 Class Routine</title>
+
+  <!--
+    =====================================
+    GLOBAL STYLES
+    Edit colors, fonts, or spacing here
+    =====================================
+  -->
+  <style>
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* ===============================
+       TABLE CONTAINER
+       =============================== */
+    table {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    th {
+      background-color: #1e90ff;
+      color: #ffffff;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    tr:hover td {
+      background-color: #f1f7ff;
+    }
+
+    /* ===============================
+       HELPER CLASSES
+       =============================== */
+    .center {
+      text-align: center;
+    }
+
+    .course {
+      font-weight: 600;
+    }
+
+    .muted {
+      color: #6b7280;
+    }
+
+    /* ===============================
+       ACTION BUTTON
+       =============================== */
+    .actions {
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #1e90ff;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #0b68c1;
+    }
+
+    /* ===============================
+       RESPONSIVE HANDLING
+       Enables horizontal scroll on small screens
+       =============================== */
+    @media (max-width: 768px) {
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Spring 2026 Class Routine</h2>
+
+  <!--
+    =====================================
+    CLASS ROUTINE TABLE
+    To add a new class:
+    - Copy one <tr> block
+    - Update Day, Time, Course, Room, Teacher
+    =====================================
+  -->
+  <table>
+    <tr>
+      <th>Day</th>
+      <th>Time</th>
+      <th>Course</th>
+      <th>Room</th>
+      <th>Teacher</th>
+    </tr>
+
+    <tr>
+      <td>Saturday</td>
+      <td>8:00 AM – 9:00 AM</td>
+      <td class="course">CSE 3111 – Computer Architecture</td>
+      <td>Floor 03, West-409</td>
+      <td>Mohammad Naderuzzaman</td>
+    </tr>
+
+    <tr>
+      <td>Saturday</td>
+      <td>9:00 AM – 10:00 AM</td>
+      <td class="course">CSE 3203 – Operating System</td>
+      <td>Floor 03, West-409</td>
+      <td class="muted">TBA</td>
+    </tr>
+
+    <tr>
+      <td>Saturday</td>
+      <td>10:00 AM – 12:00 PM</td>
+      <td class="course">CSE 3200 – Mobile App Development (Sessional)</td>
+      <td>Floor 05, West-612</td>
+      <td>Md. Ameer Hamza</td>
+    </tr>
+
+    <tr>
+      <td>Tuesday</td>
+      <td>8:00 AM – 9:00 AM</td>
+      <td class="course">CSE 3111 – Computer Architecture</td>
+      <td>Floor 03, West-409</td>
+      <td>Mohammad Naderuzzaman</td>
+    </tr>
+
+    <tr>
+      <td>Tuesday</td>
+      <td>9:00 AM – 10:00 AM</td>
+      <td class="course">CSE 3201 – Computer Networks</td>
+      <td>Floor 03, West-409</td>
+      <td>Muydul Islam</td>
+    </tr>
+
+    <tr>
+      <td>Tuesday</td>
+      <td>10:00 AM – 12:00 PM</td>
+      <td class="course">CSE 3202 – Computer Networks (Sessional)</td>
+      <td>Floor 05, West-611</td>
+      <td>Muydul Islam</td>
+    </tr>
+
+    <tr>
+      <td>Thursday</td>
+      <td>8:00 AM – 10:00 AM</td>
+      <td class="course">CSE 3204 – Operating System (Sessional)</td>
+      <td>Floor 05, West-611</td>
+      <td class="muted">TBA</td>
+    </tr>
+
+    <tr>
+      <td>Thursday</td>
+      <td>10:00 AM – 11:00 AM</td>
+      <td class="course">CSE 3203 – Operating System</td>
+      <td>Floor 03, West-409</td>
+      <td class="muted">TBA</td>
+    </tr>
+
+    <tr>
+      <td>Thursday</td>
+      <td>11:00 AM – 12:00 PM</td>
+      <td class="course">CSE 3201 – Computer Networks</td>
+      <td>Floor 03, West-409</td>
+      <td>Muydul Islam</td>
+    </tr>
+  </table>
+
+  <!--
+    =====================================
+    ACTIONS
+    Replace the link if integrating
+    into a backend framework
+    =====================================
+  -->
+  <div class="actions">
+    <a href="#" class="btn">Back to Profile</a>
+  </div>
+</body>
+</html>

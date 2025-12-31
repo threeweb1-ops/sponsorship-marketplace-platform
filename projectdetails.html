@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sponsorship Marketplace MVP – Project Proposal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #020617;
+      --bg-secondary: #0f172a;
+      --card: #111827;
+      --muted: #94a3b8;
+      --text: #e5e7eb;
+      --accent: #6366f1;
+      --accent-soft: rgba(99,102,241,0.15);
+      --border: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(1200px 600px at top center, #0f172a, #020617);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: auto;
+      padding: 70px 20px 90px;
+    }
+
+    /* ---------- HERO / OVERVIEW ---------- */
+    header {
+      margin-bottom: 80px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    header h1 {
+      font-size: 46px;
+      font-weight: 700;
+      max-width: 900px;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 16.5px;
+      max-width: 920px;
+    }
+
+    .overview-grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .overview-box {
+      background: linear-gradient(180deg, #020617, var(--card));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+    }
+
+    .overview-box span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .overview-box strong {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    /* ---------- PHASES ---------- */
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 90px;
+    }
+
+    .phase-card {
+      background: linear-gradient(180deg, #020617, var(--card));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .phase-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 45px rgba(0,0,0,0.4);
+    }
+
+    .phase-number {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .phase-card h2 {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .deliverables {
+      margin: 22px 0 26px;
+    }
+
+    .deliverables li {
+      list-style: none;
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 11px;
+      font-size: 14.5px;
+      color: #d1d5db;
+    }
+
+    .deliverables li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+
+    .meta {
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .timeline {
+      color: var(--muted);
+    }
+
+    /* ---------- SUMMARY ---------- */
+    .summary {
+      background: linear-gradient(180deg, #020617, var(--card));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 44px;
+    }
+
+    .summary h3 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .summary p {
+      color: var(--muted);
+      max-width: 950px;
+      margin-bottom: 30px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 26px;
+    }
+
+    .summary-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+    }
+
+    .summary-box span {
+      font-size: 13px;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .summary-box strong {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 90px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <span class="badge">Custom Marketplace MVP Proposal</span>
+      <h1>Sponsorship Marketplace Platform – Full Custom Development</h1>
+      <p>
+        This project is a fully custom-built sponsorship marketplace where athletes, teams, and clubs can list sponsorship opportunities, and businesses can discover, purchase, and manage sponsorship packages. The platform includes strict inventory control, sponsorship duration logic, platform fee calculation, secure payments, post-purchase contact exchange, and automated email workflows.  
+        <br><br>
+        A custom architecture ensures complete control, scalability, and long-term flexibility without the constraints of off-the-shelf marketplace solutions.
+      </p>
+
+      <div class="overview-grid">
+        <div class="overview-box">
+          <span>Build Type</span>
+          <strong>Fully Custom Platform</strong>
+        </div>
+        <div class="overview-box">
+          <span>Primary Users</span>
+          <strong>Athletes, Sponsors, Admin</strong>
+        </div>
+        <div class="overview-box">
+          <span>Payment Processing</span>
+          <strong>Stripe Integration</strong>
+        </div>
+        <div class="overview-box">
+          <span>Platform Model</span>
+          <strong>Commission Based (20%)</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="phase-grid">
+
+      <div class="phase-card">
+        <span class="phase-number">Phase 1</span>
+        <h2>UI / UX Design</h2>
+        <ul class="deliverables">
+          <li>Complete UI/UX design for all MVP pages</li>
+          <li>Marketplace homepage and listing discovery flow</li>
+          <li>Athlete and team dashboard layouts</li>
+          <li>Sponsor checkout and post-purchase pages</li>
+          <li>Admin panel wireframes and workflows</li>
+          <li>Responsive desktop and mobile designs</li>
+          <li>Centralized design system and components</li>
+        </ul>
+        <div class="meta">
+          <span class="price">$1,500 USD</span>
+          <span class="timeline">10–12 days</span>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <span class="phase-number">Phase 2</span>
+        <h2>Front-End Development</h2>
+        <ul class="deliverables">
+          <li>React-based front-end implementation</li>
+          <li>Marketplace browsing and filtering</li>
+          <li>Listing detail pages with duration visibility</li>
+          <li>Sponsor checkout with mandatory fields</li>
+          <li>Athlete, team, and admin dashboards</li>
+          <li>Fully responsive layouts</li>
+          <li>Client-side validation and feedback</li>
+        </ul>
+        <div class="meta">
+          <span class="price">$2,500 USD</span>
+          <span class="timeline">25–30 days</span>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <span class="phase-number">Phase 3</span>
+        <h2>Back-End Development</h2>
+        <ul class="deliverables">
+          <li>Node.js and Express backend</li>
+          <li>Secure database and data models</li>
+          <li>User authentication and role management</li>
+          <li>Sponsorship and inventory logic</li>
+          <li>20 percent platform fee calculation</li>
+          <li>Stripe payment integration</li>
+          <li>Automated emails and file uploads</li>
+        </ul>
+        <div class="meta">
+          <span class="price">$2,000 USD</span>
+          <span class="timeline">25–30 days</span>
+        </div>
+      </div>
+
+      <div class="phase-card">
+        <span class="phase-number">Phase 4</span>
+        <h2>Testing and Quality Assurance</h2>
+        <ul class="deliverables">
+          <li>End-to-end user flow testing</li>
+          <li>Payment and fee validation</li>
+          <li>Inventory and duration testing</li>
+          <li>Email trigger verification</li>
+          <li>Bug fixing and performance optimization</li>
+          <li>Production readiness checks</li>
+        </ul>
+        <div class="meta">
+          <span class="price">$500 USD</span>
+          <span class="timeline">10 days</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="summary">
+      <h3>Project Summary</h3>
+      <p>
+        This phased execution plan ensures a stable MVP launch while maintaining a clean architecture that can scale
+        seamlessly with future features such as messaging, analytics, contract automation, and advanced reporting.
+      </p>
+
+      <div class="summary-grid">
+        <div class="summary-box">
+          <span>Total Investment</span>
+          <strong>$6,500 USD</strong>
+        </div>
+        <div class="summary-box">
+          <span>Estimated Timeline</span>
+          <strong>2–3 Months</strong>
+        </div>
+        <div class="summary-box">
+          <span>Delivery Model</span>
+          <strong>Phase-Based Execution</strong>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      All required APIs, payment accounts, hosting, and domain access will be provided by the client and integrated as part of the project scope.
+    </footer>
+
+  </div>
+</body>
+</html>
